@@ -44,8 +44,8 @@
                             </td>
                             <td>
                                 <div>
-                                    <select id="customer" class="form-control">
-                                        <option value="">= Pilih =</option>
+                                    <select id="customer" class="form-control customerSelect">
+                                        <option value=""></option>
                                         <?php foreach($customer as $cust => $value){
                                             echo '<option value="'.$value->customer_id.'">'.$value->customer_name.'</option>';
                                         } ?>
@@ -70,7 +70,7 @@
                                 <div class="form-group input-group">
                                     <input type="hidden" id="iuran_id">
                                     <input type="hidden" id="price">
-                                    <input type="text" id="ipl" class="form-control" autofocus>
+                                    <input type="text" name="iuran_name" id="iuran_name" class="form-control" autofocus>
                                     <span class="input-group-btn">
                                         <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#modal-item">
                                             <i class="fa fa-search"></i>
@@ -219,7 +219,7 @@
 
 </section>
 
-
+<!-- data item -->
 <div class="modal fade" id="modal-item">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -246,7 +246,8 @@
                                 <td class="text-right">
                                     <button class="btn btn-xs btn-success" id="select" 
                                     data-id="<?=$data->iuran_id?>"
-                                    data-barcode="<?=$data->iuran_name?>">
+                                    data-price="<?=$data->price?>"
+                                    data-iuran_name="<?=$data->iuran_name?>">
                                         <i class="check"></i> Select
                                     </button>
                                 </td>
@@ -263,8 +264,10 @@
     $(document).ready(function() {
             $(document).on('click', '#select', function(){
                 var iuran_id = $(this).data('id');
+                var price = $(this).data('price');
                 var iuran_name = $(this).data('iuran_name');
                 $('#iuran_id').val(iuran_id);
+                $('#price').val(price);
                 $('#iuran_name').val(iuran_name);
                 $('#modal-item').modal('hide');
             })

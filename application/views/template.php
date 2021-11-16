@@ -287,5 +287,14 @@
         });
     });
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.customerSelect').select2({
+          placeholder: "Pilih Customer",
+          allowClear: true
+        });
+    });
+</script>
 </body>
 </html>
