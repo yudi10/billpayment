@@ -178,7 +178,7 @@
           <ul class="treeview-menu">
             <li <?=$this->uri->segment(1) == 'unit' ? 'class="active"' : '' ?>><a href="<?=site_url('unit')?>"><i class="fa fa-circle-o"></i> Type Unit</a></li>
             <li <?=$this->uri->segment(1) == 'customer' ? 'class="active"' : '' ?>><a href="<?=site_url('customer')?>"><i class="fa fa-circle-o"></i> Customer</a></li>
-            <li <?=$this->uri->segment(1) == 'iuran' ? 'class="active"' : '' ?>><a href="<?=site_url('iuran')?>"><a href="<?=site_url('iuran')?>"><i class="fa fa-circle-o"></i> Iuran</a></li>
+            <li <?=$this->uri->segment(1) == 'iuran' ? 'class="active"' : '' ?>><a href="<?=site_url('iuran')?>"><i class="fa fa-circle-o"></i> Iuran</a></li>
             <!-- <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Items</a></li> -->
           </ul>
         </li>

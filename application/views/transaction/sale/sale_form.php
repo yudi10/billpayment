@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="col-lg-4">
             <div class="box box-widget">
                 <div class="box-body">
@@ -72,9 +72,11 @@
                                     <input type="hidden" id="price">
                                     <input type="text" name="iuran_name" id="iuran_name" class="form-control" autofocus>
                                     <span class="input-group-btn">
+                                        <!-- modal data Iuran -->
                                         <button type="button" class="btn btn-info btn-flat" data-toggle="modal" data-target="#modal-item">
                                             <i class="fa fa-search"></i>
                                         </button>
+                                        <!-- end modal data iuran -->
                                     </span>
                                 </div>
                             </td>
@@ -92,11 +94,13 @@
                         <tr>
                             <td></td>
                             <td>
+                                
                                 <div>
-                                    <button type="button" id="add_cart" class="btn btn-primary">
+                                    <button type="submit" id="add_cart" class="btn btn-primary">
                                         <i class="fa fa-cart-plus"></i> Add
                                     </button>
                                 </div>
+                                
                             </td>
                         </tr>
                     </table>
@@ -115,7 +119,7 @@
             </div>
         </div>
     </div>
-
+<!-- table transaction -->
     <div class="row">
         <div class="col-lg-12">
             <div class="box box-widget">
@@ -124,10 +128,10 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Iuran</th>
+                                <th>Iuran Name</th>
+                                <th>Size Unit</th>
                                 <th>Price</th>
                                 <th>QTY</th>
-                                <th width="10%">Discount Iuran</th>
                                 <th width="15%">Total</th>
                                 <th>Action</th>
                             </tr>
@@ -135,7 +139,7 @@
                         <tbody id="cart_table">
                         
                             <tr>
-                                <td class="text-center">0</td>
+                                <td class="text-center">1</td>
                             </tr>
                             
                         </tbody>
@@ -219,7 +223,7 @@
 
 </section>
 
-<!-- data item -->
+<!-- modal data table iuran -->
 <div class="modal fade" id="modal-item">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -273,3 +277,24 @@
             })
         })
 </script>
+
+<!-- <script>
+    $(document).ready(function(){
+        $(document).on('click', '#add_cart', function(){
+            var iuran_id = $(this).data('iuran_id');
+            var iuran_name = $(this).data('iuran_name');
+            var price = $(this).data('price');
+            var qty = $('#' * iuran_id).val();
+            $.ajax({
+                type : 'GET',
+                url : '<?=site_url('sale/add_to_cart')?>',
+                data : 'iuran_id=' + iuran_id + '&iuran_name' + iuran_name + '&price' + price + 'qty' + qty,
+                // data : {iuran_id: iuran_id, iuran_name: iuran_name, price: price, qty: qty},
+                success: function(html){
+                    load_data_temp();
+                }
+            });
+        })
+    })
+</script> -->
+

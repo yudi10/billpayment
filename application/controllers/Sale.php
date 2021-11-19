@@ -28,8 +28,29 @@ class Sale extends CI_Controller {
 		$this->template->load('template', 'transaction/sale/sale_form', $data);
 	}
 
-	public function add_to_cart()
-	{
-		
-	}
+	// public function add_to_cart(){
+	// 	$data = array(
+	// 		'iuran_id' => $this->input->post('iuran_id'),
+	// 		'iuran_name' => $this->input->post('iuran_name'),
+	// 		'price'	=> $this->input->post('price'),
+	// 		'qty' => $this->input->post('qty'),
+	// 	);
+	// 	$this->cart->insert($data);
+	// 	echo $this->show_cart();
+	// }
+
+	// public function show_cart(){
+	// 	$output = '';
+	// 	$no = 0;
+	// 	foreach($this->cart->contents() as $items){
+	// 		$no++;
+	// 		$output .='
+	// 			<tr>
+	// 				<td>'.$items['iuran_name'].'</td>
+	// 				<td>'.$items['price'].'</td>
+	// 				<td>'.$items['qty'].'</td>
+	// 			</tr>
+	// 		';
+	// 	}
+	// }
 }
